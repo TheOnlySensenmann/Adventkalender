@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. Advent</title>
+    <link rel="stylesheet" href="setup.css">
+    
+</head>
+<body style="background-color: aliceblue; padding: 10px">  
+    <h1>1. Advent</h1>
+    <main style="background-color: white; padding: 10px;">
+        <article style="background-color: beige; padding: 10px">
+            <h2>
+                Die Frage:
+            </h2>
+
+            <p>Was ist 1 + 1?</p>
+        </article>
+
+        
+        
+
+        
+    </main>
+
+    <footer style="background-color: white; padding: 10px;">
+        <article style="background-color: rgb(255, 211, 211); padding: 10px">
+            <h2>Weißt du die Lösung?</h2>
+
+            <button onclick="submitSolution()">Lösung eingeben</button>
+
+            <p id="solution"></p>
+        </article>
+
+        <article>
+            
+        </article>
+        
+    </footer>
+    
+
+    
+<script>
+    function submitSolution(){
+        let input = prompt("Gib dein Ergebnis ein", "");
+        if (input == 2) {
+            document.getElementById("solution").innerHTML = "Richtig";
+        } else {
+            document.getElementById("solution").innerHTML = "Falsch";
+        }
+    }
+</script>
+
+
+    
+</body>
+
+</html>
