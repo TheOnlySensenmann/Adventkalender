@@ -8,14 +8,36 @@
     
 </head>
 <body style="background-color: aliceblue; padding: 10px">  
-    <h1>1. Advent</h1>
+    <h1 id="Day"></h1>
+    <script>
+        const questionInString = "Was ist 1+1?";
+        
+        const answer = "2";
+
+        const date = 1;
+        let isAllowed = true;
+        document.getElementById("Day").innerHTML = date + ".Advent";
+    </script>
+    
     <main style="background-color: white; padding: 10px;">
         <article style="background-color: beige; padding: 10px">
             <h2>
                 Die Frage:
             </h2>
 
-            <p>Was ist 1 + 1?</p>
+            <p id="question"></p>
+
+            <script>
+                 if (new Date().getDate() == 12 && new Date().getDay() >= 1){
+                    document.getElementById("question").innerHTML = questionInString;
+                } else{
+                    document.getElementById("question").innerHTML = "Es ist noch nicht so weit, verschwinde von hier!!!!";
+                    isAllowed = false;
+                }
+                
+            </script>
+
+            
         </article>
 
         <article style="background-color: rgb(255, 211, 211); padding: 10px">
@@ -45,8 +67,11 @@
     
 <script>
     function submitSolution(){
+        if(!isAllowed){
+            return;
+        }
         let input = prompt("Gib dein Ergebnis ein", "");
-        if (input == 2) {
+        if (input == answer) {
             document.getElementById("solution").innerHTML = "Das ist Richtig! Gratulation!";
         } else {
             document.getElementById("solution").innerHTML = "Des is foisch";
